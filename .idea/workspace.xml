@@ -5,18 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5cb30cf5-ab97-47b2-affb-e61e6d769e95" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/tree/pack/RestAplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/tree/pack/TreeLoader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/tree/pack/TreePresentationController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/tree/pack/WebServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/tree/pack/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/tree/pack/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/tree/pack/Tree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/tree/pack/Tree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/tree/pack/NodeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/tree/pack/NodeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +35,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master"
+    "git-widget-placeholder": "main"
   }
 }]]></component>
   <component name="RunManager" selected="Application.WebServer">
