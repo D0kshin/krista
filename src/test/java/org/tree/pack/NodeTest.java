@@ -214,11 +214,11 @@ public class NodeTest {
         tree.addChild("child1", "child13");
         tree.addChild("child2", "child21");
         tree.addChild("child2", "child22");
-        tree.deleteChildByName("child12");
+        tree.deleteChild("child12");
         assertEquals(tree.findNode(root, "child12"), null);
         assertEquals(tree.findNode(root, "child13").getName(), "child13");
         assertEquals(tree.findNode(root, "child11").getName(), "child11");
-        tree.deleteChildById(6);
+        tree.deleteChild(6);
         assertEquals(tree.findNode(root, 6), null);
         assertEquals(tree.findNode(root, 7).getName(), "child22");
     }

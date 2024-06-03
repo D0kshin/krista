@@ -1,13 +1,6 @@
 package org.tree.pack;
 
-import com.sun.source.tree.ReturnTree;
-
-import java.io.FileWriter;
-import java.sql.Statement;
-import java.io.Writer;
 import java.util.ArrayList;
-import java.io.File;
-import java.io.IOException;
 
 public class Tree {
     private Node rootNode;
@@ -94,14 +87,14 @@ public class Tree {
         Node parent = findNode(rootNode, nodeName);
         parent.setChildrenNodes(new ArrayList<Node>());
     }
-    public void deleteChildById(Integer nodeId){
-        //удаление дочернего узл у родительского узла по айди родительского узла
+    public void deleteChild(Integer nodeId){
+        //удаление дочернего узла у родительского узла по айди дочернего узла
         Node child = findNode(rootNode, nodeId);
         ArrayList<Node> parentChildList = child.getParent().getChildren();
         parentChildList.remove(child);
     }
-    public void deleteChildByName(String nodeName){
-        //удаление дочернего узл у родительского узла по имени родительского узла
+    public void deleteChild(String nodeName){
+        //удаление дочернего узл у родительского узла по имени дочернего узла
         Node child = findNode(rootNode, nodeName);
         ArrayList<Node> parentChildList = child.getParent().getChildren();
         parentChildList.remove(child);
@@ -116,8 +109,22 @@ public class Tree {
         Node node = findNode(rootNode, oldNodeName);
         node.setName(newName);
     }
-    public String getTreeString(){
-       return recursivePrint(rootNode, 0, "");
+    public String getTreeHTMLString(){
+        String result =
+                "<html>" +
+                "  <head>" +
+                "    <title>Вывод Дерева</title>" +
+                "  </head>" +
+                "  <body>" +
+                "    <h1>Дерево</h1>" +
+                "    <ul>"+
+                "    <pre>" +
+                recursivePrint(rootNode, 0, "")+
+                "   </pre>" +
+                "    </ul>" +
+                "  </body>" +
+                "</html>";
+        return result;
     }
     private String recursivePrint(Node startSearchNode, Integer i, String res){
         //печать дерева с текущего узла
@@ -133,6 +140,7 @@ public class Tree {
             res += " ";
         }
         res += startSearchNode.getName();
+        res += " <a href=\"edit/" + startSearchNode.getId() + "\">Редактировать</a> </li>";
         if(startSearchNode.getChildren().isEmpty()){
             return res;
         }
@@ -141,25 +149,5 @@ public class Tree {
             res = recursivePrint(child, i, res);
         }
         return res;
-    }
-
-    void printTreeInFile(){
-        try {
-            File file = new File("example.html");
-            file.createNewFile();
-            FileWriter writer = new FileWriter("example.html", false);
-            System.out.println(getTreeString());
-            writer.write("<!DOCTYPE html>\n" +
-                    "<html>\n" +
-                    "<body>\n" +
-                    "<pre>" +
-                    getTreeString() + "</pre>\n" +
-                    "</body>\n" +
-                    "</html>");
-            writer.close();
-        } catch (IOException e) {
-            System.out.println("Ошибка при во время записи");
-            e.printStackTrace();
-        }
     }
 }
